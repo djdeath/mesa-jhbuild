@@ -4,6 +4,7 @@
 <!-- vim:set ts=2 expandtab: -->
 <moduleset>
 
+  <repository type="system" name="system"/>
   <repository type="git" name="git.freedesktop.org"
               href="https://anongit.freedesktop.org/git/"/>
   <repository type="git" name="github.com"
@@ -41,6 +42,7 @@
             module="mesa/mesa"/>
     <dependencies>
       <dep package="libdrm" />
+      <dep package="libX11" />
       <dep package="wayland" />
     </dependencies>
   </autotools>
@@ -84,5 +86,16 @@
       <dep package="mesa" />
     </dependencies>
   </autotools>
+
+  <!-- System depencies -->
+  <systemmodule id="libX11">
+    <pkg-config>x11.pc</pkg-config>
+    <branch repo="system"/>
+  </systemmodule>
+
+  <systemmodule id="pangocairo">
+    <pkg-config>pangocairo.pc</pkg-config>
+    <branch repo="system"/>
+  </systemmodule>
 
 </moduleset>
