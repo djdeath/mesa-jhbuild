@@ -38,8 +38,9 @@
 
   <!-- skip-autogen="never" -->
   <autotools id="mesa" autogenargs="--enable-debug --enable-gles2 --with-dri-drivers=i965 --with-egl-platforms=x11,drm,wayland,surfaceless --with-gallium-drivers= --enable-gbm --disable-gallium-egl --with-vulkan-drivers=intel">
-    <branch repo="git.freedesktop.org"
-            module="mesa/mesa"/>
+    <branch repo="github.com"
+            module="djdeath/mesa"
+            revision="aux-buf-v3" />
     <dependencies>
       <dep package="libdrm" />
       <dep package="libX11" />
@@ -80,8 +81,9 @@
   </autotools>
 
   <autotools id="cogl" autogenargs="--enable-vulkan --enable-gles2 --enable-kms-egl-platform=yes">
-    <branch repo="git.gnome.org"
-            module="cogl"/>
+    <branch repo="github.com"
+            module="djdeath/cogl"
+            revision="hiz-sampling" />
     <dependencies>
       <dep package="mesa" />
     </dependencies>
