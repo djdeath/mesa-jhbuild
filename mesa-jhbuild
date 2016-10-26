@@ -1,0 +1,3 @@
+#!/bin/sh
+
+jhbuild -f $HOME/src/mesa/mesa-jhbuild.conf $@

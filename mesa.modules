@@ -1,0 +1,88 @@
+<?xml version="1.0"?><!--*- mode: nxml; indent-tabs-mode: nil -*-->
+<!DOCTYPE moduleset SYSTEM "moduleset.dtd">
+<?xml-stylesheet type="text/xsl" href="moduleset.xsl"?>
+<!-- vim:set ts=2 expandtab: -->
+<moduleset>
+
+  <repository type="git" name="git.freedesktop.org"
+              href="https://anongit.freedesktop.org/git/"/>
+  <repository type="git" name="github.com"
+              href="https://github.com/"/>
+  <repository type="git" name="wayland.freedesktop.org"
+              href="https://anongit.freedesktop.org/git/wayland"/>
+  <repository type="git" name="git.gnome.org" default="yes"
+              href="https://git.gnome.org/browse/"/>
+
+  <autotools id="libdrm" autogenargs="--disable-vmwgfx --disable-nouveau --disable-radeon">
+    <branch repo="git.freedesktop.org"
+            module="mesa/drm"/>
+    <dependencies>
+    </dependencies>
+  </autotools>
+
+  <autotools id="wayland-protocols">
+    <branch repo="wayland.freedesktop.org"/>
+  </autotools>
+
+  <autotools id="wayland"
+             autogenargs="--disable-documentation">
+    <branch repo="wayland.freedesktop.org"/>
+    <dependencies>
+      <dep package="libffi"/>
+      <dep package="doxygen"/>
+      <dep package="xmlto"/>
+    </dependencies>
+  </autotools>
+
+
+  <!-- skip-autogen="never" -->
+  <autotools id="mesa" autogenargs="--enable-debug --enable-gles2 --with-dri-drivers=i965 --with-egl-platforms=x11,drm,wayland,surfaceless --with-gallium-drivers= --enable-gbm --disable-gallium-egl --with-vulkan-drivers=intel">
+    <branch repo="git.freedesktop.org"
+            module="mesa/mesa"/>
+    <dependencies>
+      <dep package="libdrm" />
+      <dep package="wayland" />
+    </dependencies>
+  </autotools>
+
+  <cmake id="piglit">
+    <branch repo="git.freedesktop.org"
+            module="piglit"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </cmake>
+
+  <autotools id="intel-gpu-tools" autogenargs="--disable-nouveau">
+    <branch repo="git.freedesktop.org"
+            module="xorg/app/intel-gpu-tools"/>
+    <dependencies>
+      <dep package="libdrm" />
+    </dependencies>
+  </autotools>
+
+  <autotools id="demos" autogenargs="">
+    <branch repo="git.freedesktop.org"
+            module="mesa/demos"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </autotools>
+
+  <autotools id="vkcube" autogenargs="">
+    <branch repo="github.com"
+            module="krh/vkcube.git"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </autotools>
+
+  <autotools id="cogl" autogenargs="--enable-vulkan --enable-gles2 --enable-kms-egl-platform=yes">
+    <branch repo="git.gnome.org"
+            module="cogl"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </autotools>
+
+</moduleset>
