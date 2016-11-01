@@ -87,6 +87,17 @@
     </dependencies>
   </autotools>
 
+  <autotools id="gputop" autogenargs="--enable-node-clients --enable-gl">
+    <branch repo="github.com"
+            module="rib/gputop"/>
+    <dependencies>
+      <dep package="mesa"/>
+      <dep package="emscripten"/>
+      <dep package="protobuf"/>
+      <dep package="libyaml"/>
+    </dependencies>
+  </autotools>
+
   <!-- System depencies -->
   <systemmodule id="libX11">
     <pkg-config>x11.pc</pkg-config>
@@ -95,6 +106,25 @@
 
   <systemmodule id="pangocairo">
     <pkg-config>pangocairo.pc</pkg-config>
+    <branch repo="system"/>
+  </systemmodule>
+
+  <systemmodule id="libyaml">
+    <pkg-config>yaml-0.1.pc</pkg-config>
+    <branch repo="system"/>
+  </systemmodule>
+
+  <systemmodule id="emscripten">
+    <systemdependencies>
+      <dep type="path" name="emcc"/>
+    </systemdependencies>
+    <branch repo="system"/>
+  </systemmodule>
+
+  <systemmodule id="protobuf">
+    <systemdependencies>
+      <dep type="c_include" name="google/protobuf/compiler/code_generator.h"/>
+    </systemdependencies>
     <branch repo="system"/>
   </systemmodule>
 
