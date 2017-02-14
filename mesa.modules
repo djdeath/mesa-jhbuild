@@ -37,7 +37,7 @@
 
 
   <!-- skip-autogen="never" -->
-  <autotools id="mesa" autogenargs="--enable-debug --enable-gles2 --with-dri-drivers=i965 --with-egl-platforms=x11,drm,wayland,surfaceless --with-gallium-drivers= --enable-gbm --disable-gallium-egl --with-vulkan-drivers=intel">
+  <autotools id="mesa" autogenargs="--enable-debug --enable-gles2 --with-dri-drivers=i965 --with-egl-platforms=x11,drm,wayland,surfaceless --disable-gallium-llvm --with-gallium-drivers= --enable-gbm --disable-gallium-egl --with-vulkan-drivers=intel">
     <branch repo="git.freedesktop.org"
             module="mesa/mesa"/>
     <dependencies>
@@ -46,14 +46,6 @@
       <dep package="wayland" />
     </dependencies>
   </autotools>
-
-  <cmake id="piglit">
-    <branch repo="git.freedesktop.org"
-            module="piglit"/>
-    <dependencies>
-      <dep package="mesa" />
-    </dependencies>
-  </cmake>
 
   <autotools id="intel-gpu-tools" autogenargs="--disable-nouveau">
     <branch repo="git.freedesktop.org"
@@ -79,13 +71,21 @@
     </dependencies>
   </autotools>
 
-  <autotools id="cogl" autogenargs="--enable-vulkan --enable-gles2 --enable-kms-egl-platform=yes">
+  <autotools id="cogl" autogenargs="--with-vulkan --enable-kms-egl-platform --enable-wayland-egl-platform --enable-wayland-egl-server --enable-xlib-egl-platform --enable-gles2 --enable-gl">
     <branch repo="git.gnome.org"
             module="cogl"/>
     <dependencies>
       <dep package="mesa" />
     </dependencies>
   </autotools>
+
+  <cmake id="piglit">
+    <branch repo="git.freedesktop.org"
+            module="piglit"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </cmake>
 
   <autotools id="gputop" autogenargs="--enable-node-clients --enable-gl">
     <branch repo="github.com"
