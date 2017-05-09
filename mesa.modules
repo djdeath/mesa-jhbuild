@@ -47,7 +47,7 @@
     </dependencies>
   </autotools>
 
-  <autotools id="intel-gpu-tools" autogenargs="--disable-nouveau">
+  <autotools id="intel-gpu-tools" autogenargs="--disable-nouveau --disable-amdgpu">
     <branch repo="git.freedesktop.org"
             module="xorg/app/intel-gpu-tools"/>
     <dependencies>
