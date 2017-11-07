@@ -47,13 +47,13 @@
     </dependencies>
   </autotools>
 
-  <autotools id="intel-gpu-tools" autogenargs="--disable-nouveau --disable-amdgpu">
+  <meson id="intel-gpu-tools" mesonargs="">
     <branch repo="git.freedesktop.org"
             module="xorg/app/intel-gpu-tools"/>
     <dependencies>
       <dep package="libdrm" />
     </dependencies>
-  </autotools>
+  </meson>
 
   <autotools id="demos" autogenargs="">
     <branch repo="git.freedesktop.org"
