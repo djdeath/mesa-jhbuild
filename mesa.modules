@@ -87,6 +87,14 @@
     </dependencies>
   </cmake>
 
+  <meson id="vkcube">
+    <branch repo="github.com"
+            module="krh/vkcube"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </meson>
+
   <autotools id="gputop" autogenargs="--enable-node-clients --enable-gl">
     <branch repo="github.com"
             module="rib/gputop"/>
