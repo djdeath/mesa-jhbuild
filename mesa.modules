@@ -37,7 +37,7 @@
 
 
   <!-- skip-autogen="never" -->
-  <autotools id="mesa" autogenargs="--enable-debug --enable-gles2 --disable-gles1 --with-dri-drivers=i965 --with-egl-platforms=x11,drm,wayland,surfaceless --disable-gallium-llvm --with-gallium-drivers= --enable-gbm --disable-gallium-egl --with-vulkan-drivers=intel">
+  <meson id="mesa" mesonargs="-Dgles2=true -Ddri-drivers=i965 -Degl-platforms=x11,drm,wayland,surfaceless -Dgallium-drivers= -Dgbm=true -Dvulkan-drivers=intel">
     <branch repo="git.freedesktop.org"
             module="mesa/mesa"/>
     <dependencies>
@@ -45,7 +45,7 @@
       <dep package="libX11" />
       <dep package="wayland" />
     </dependencies>
-  </autotools>
+  </meson>
 
   <meson id="intel-gpu-tools" mesonargs="">
     <branch repo="git.freedesktop.org"
