@@ -95,16 +95,11 @@
     </dependencies>
   </meson>
 
-  <autotools id="gputop" autogenargs="--enable-node-clients --enable-gl">
+  <meson id="gputop" mesonargs="--default-library=static">
     <branch repo="github.com"
-            module="rib/gputop"/>
-    <dependencies>
-      <dep package="mesa"/>
-      <dep package="emscripten"/>
-      <dep package="protobuf"/>
-      <dep package="libyaml"/>
-    </dependencies>
-  </autotools>
+            module="rib/gputop"
+            revision="imgui"/>
+  </meson>
 
   <!-- System depencies -->
   <systemmodule id="libX11">
