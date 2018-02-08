@@ -14,12 +14,12 @@
   <repository type="git" name="git.gnome.org" default="yes"
               href="https://git.gnome.org/browse/"/>
 
-  <autotools id="libdrm" autogenargs="--disable-vmwgfx --disable-nouveau --disable-radeon">
+  <meson id="libdrm" mesonargs="">
     <branch repo="git.freedesktop.org"
             module="mesa/drm"/>
     <dependencies>
     </dependencies>
-  </autotools>
+  </meson>
 
   <autotools id="wayland-protocols">
     <branch repo="wayland.freedesktop.org"/>
