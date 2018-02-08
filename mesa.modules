@@ -97,8 +97,7 @@
 
   <meson id="gputop" mesonargs="--default-library=static -Dnative_ui=true">
     <branch repo="github.com"
-            module="rib/gputop"
-            revision="imgui"/>
+            module="rib/gputop"/>
   </meson>
 
   <!-- System depencies -->
