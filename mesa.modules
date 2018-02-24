@@ -96,9 +96,27 @@
     </dependencies>
   </meson>
 
-  <meson id="gputop" mesonargs="--default-library=static -Dnative_ui=true">
+  <meson id="gputop" mesonargs="-Dnative_ui=true">
     <branch repo="github.com"
             module="rib/gputop"/>
+  </meson>
+
+  <meson id="libva" mesonargs="">
+    <branch repo="github.com"
+            module="intel/libva" />
+  </meson>
+
+  <autotools id="libva-utils" autogenargs="">
+    <branch repo="github.com"
+            module="intel/libva-utils" />
+    <dependencies>
+      <dep package="libva" />
+    </dependencies>
+  </autotools>
+
+  <meson id="intel-vaapi-driver" mesonargs="">
+    <branch repo="github.com"
+            module="intel/intel-vaapi-driver" />
   </meson>
 
   <!-- System depencies -->
