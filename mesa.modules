@@ -32,6 +32,7 @@
       <dep package="libffi"/>
       <dep package="doxygen"/>
       <dep package="xmlto"/>
+      <dep package="wayland-protocols"/>
     </dependencies>
   </autotools>
 
@@ -47,7 +48,7 @@
     </dependencies>
   </meson>
 
-  <meson id="intel-gpu-tools" mesonargs="">
+  <meson id="intel-gpu-tools" mesonargs="-Dbuildtype=debug">
     <branch repo="git.freedesktop.org"
             module="xorg/app/intel-gpu-tools"/>
     <dependencies>
@@ -108,25 +109,6 @@
 
   <systemmodule id="pangocairo">
     <pkg-config>pangocairo.pc</pkg-config>
-    <branch repo="system"/>
-  </systemmodule>
-
-  <systemmodule id="libyaml">
-    <pkg-config>yaml-0.1.pc</pkg-config>
-    <branch repo="system"/>
-  </systemmodule>
-
-  <systemmodule id="emscripten">
-    <systemdependencies>
-      <dep type="path" name="emcc"/>
-    </systemdependencies>
-    <branch repo="system"/>
-  </systemmodule>
-
-  <systemmodule id="protobuf">
-    <systemdependencies>
-      <dep type="c_include" name="google/protobuf/compiler/code_generator.h"/>
-    </systemdependencies>
     <branch repo="system"/>
   </systemmodule>
 
