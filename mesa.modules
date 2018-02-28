@@ -106,17 +106,20 @@
             module="intel/libva" />
   </meson>
 
-  <autotools id="libva-utils" autogenargs="">
+  <meson id="libva-utils" mesonargs="">
     <branch repo="github.com"
-            module="intel/libva-utils" />
+            module="djdeath/libva-utils" />
     <dependencies>
       <dep package="libva" />
     </dependencies>
-  </autotools>
+  </meson>
 
   <meson id="intel-vaapi-driver" mesonargs="">
     <branch repo="github.com"
             module="intel/intel-vaapi-driver" />
+    <dependencies>
+      <dep package="libva" />
+    </dependencies>
   </meson>
 
   <!-- System depencies -->
