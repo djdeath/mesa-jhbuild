@@ -48,9 +48,9 @@
     </dependencies>
   </meson>
 
-  <meson id="intel-gpu-tools" mesonargs="-Dbuildtype=debug">
+  <meson id="igt" mesonargs="-Dbuildtype=debug">
     <branch repo="git.freedesktop.org"
-            module="xorg/app/intel-gpu-tools"/>
+            module="drm/igt-gpu-tools"/>
     <dependencies>
       <dep package="libdrm" />
     </dependencies>
