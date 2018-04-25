@@ -48,7 +48,7 @@
     </dependencies>
   </meson>
 
-  <meson id="igt" mesonargs="-Dbuildtype=debug">
+  <meson id="igt" mesonargs="">
     <branch repo="git.freedesktop.org"
             module="drm/igt-gpu-tools"/>
     <dependencies>
