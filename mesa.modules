@@ -88,6 +88,11 @@
     </dependencies>
   </cmake>
 
+  <cmake id="mdapi" cmakeargs="-DMD_PLATFORM=linux -DMD_BUILD_TYPE=debug">
+    <branch repo="github.com"
+            module="intel/metrics-discovery"/>
+  </cmake>
+
   <meson id="vkcube">
     <branch repo="github.com"
             module="krh/vkcube"/>
