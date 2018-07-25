@@ -9,6 +9,8 @@
               href="https://anongit.freedesktop.org/git/"/>
   <repository type="git" name="github.com"
               href="https://github.com/"/>
+  <repository type="git" name="gitlab.fdo.org"
+              href="https://gitlab.freedesktop.org/"/>
   <repository type="git" name="wayland.freedesktop.org"
               href="https://anongit.freedesktop.org/git/wayland"/>
   <repository type="git" name="git.gnome.org" default="yes"
@@ -81,8 +83,8 @@
   </autotools>
 
   <cmake id="piglit">
-    <branch repo="git.freedesktop.org"
-            module="piglit"/>
+    <branch repo="gitlab.fdo.org"
+            module="mesa/piglit"/>
     <dependencies>
       <dep package="mesa" />
     </dependencies>
