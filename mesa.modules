@@ -129,6 +129,11 @@
     </dependencies>
   </meson>
 
+  <cmake id="media-driver" cmakeargs="-DMEDIA_VERSION=2.0.0 -DBS_DIR_GMMLIB=$PWD/../gmmlib/Source/GmmLib/ -DBS_DIR_COMMON=$PWD/../gmmlib/Source/Common/ -DBS_DIR_INC=$PWD/../gmmlib/Source/inc/ -DBS_DIR_MEDIA=$PWD/../media-driver">
+    <branch repo="github.com"
+            module="intel/media-driver"/>
+  </cmake>
+
   <!-- System depencies -->
   <systemmodule id="libX11">
     <pkg-config>x11.pc</pkg-config>
