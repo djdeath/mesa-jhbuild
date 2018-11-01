@@ -66,14 +66,6 @@
     </dependencies>
   </autotools>
 
-  <autotools id="vkcube" autogenargs="">
-    <branch repo="github.com"
-            module="krh/vkcube.git"/>
-    <dependencies>
-      <dep package="mesa" />
-    </dependencies>
-  </autotools>
-
   <autotools id="cogl" autogenargs="--with-vulkan --enable-kms-egl-platform --enable-wayland-egl-platform --enable-wayland-egl-server --enable-xlib-egl-platform --enable-gles2 --enable-gl">
     <branch repo="git.gnome.org"
             module="cogl"/>
@@ -138,6 +130,14 @@
     <branch repo="github.com"
             module="KhronosGroup/glslang"/>
   </cmake>
+
+  <meson id="vkcube" mesonargs="">
+    <branch repo="github.com"
+            module="krh/vkcube" />
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </meson>
 
   <!-- System depencies -->
   <systemmodule id="libX11">
