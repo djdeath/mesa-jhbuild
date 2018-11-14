@@ -97,7 +97,8 @@
   </cmake>
 
   <cmake id="renderdoc"
-         force-non-srcdir-builds="yes">
+         force-non-srcdir-builds="yes" use-ninja="no"
+         cmakeargs="-DCMAKE_BUILD_TYPE=Debug">
     <branch repo="github.com"
             module="baldurk/renderdoc"
             revision="v1.x"/>
