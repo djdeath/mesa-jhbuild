@@ -10,9 +10,7 @@
   <repository type="git" name="github.com"
               href="https://github.com/"/>
   <repository type="git" name="gitlab.fdo.org"
-              href="https://gitlab.freedesktop.org/"/>
-  <repository type="git" name="wayland.freedesktop.org"
-              href="https://anongit.freedesktop.org/git/wayland"/>
+              href="https://gitlab.freedesktop.org"/>
   <repository type="git" name="git.gnome.org" default="yes"
               href="https://git.gnome.org/browse/"/>
 
@@ -24,12 +22,12 @@
   </meson>
 
   <autotools id="wayland-protocols">
-    <branch repo="wayland.freedesktop.org"/>
+    <branch repo="git.freedesktop.org" module="wayland/wayland-protocols"/>
   </autotools>
 
   <autotools id="wayland"
              autogenargs="--disable-documentation">
-    <branch repo="wayland.freedesktop.org"/>
+    <branch repo="gitlab.fdo.org" module="wayland/wayland"/>
     <dependencies>
       <dep package="libffi"/>
       <dep package="doxygen"/>
@@ -51,16 +49,32 @@
   </meson>
 
   <meson id="igt" mesonargs="">
-    <branch repo="git.freedesktop.org"
+    <branch repo="gitlab.fdo.org"
             module="drm/igt-gpu-tools"/>
     <dependencies>
       <dep package="libdrm" />
     </dependencies>
   </meson>
 
+  <autotools id="crucible" autogenargs="">
+    <branch repo="git.freedesktop.org"
+            module="mesa/crucible"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </autotools>
+
   <autotools id="demos" autogenargs="">
     <branch repo="git.freedesktop.org"
             module="mesa/demos"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </autotools>
+
+  <autotools id="vkcube" autogenargs="">
+    <branch repo="github.com"
+            module="krh/vkcube.git"/>
     <dependencies>
       <dep package="mesa" />
     </dependencies>
@@ -82,6 +96,21 @@
     </dependencies>
   </cmake>
 
+  <cmake id="renderdoc"
+         force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="baldurk/renderdoc"
+            revision="v1.x"/>
+    <dependencies>
+      <dep package="mesa" />
+    </dependencies>
+  </cmake>
+
+  <cmake id="glslang" cmakeargs="-DCMAKE_BUILD_TYPE=Debug">
+    <branch repo="github.com"
+            module="KhronosGroup/glslang"/>
+  </cmake>
+
   <cmake id="mdapi" cmakeargs="-DMD_PLATFORM=linux -DMD_BUILD_TYPE=debug">
     <branch repo="github.com"
             module="intel/metrics-discovery"/>
@@ -100,9 +129,27 @@
             module="rib/gputop"/>
   </meson>
 
+  <meson id="ksim" mesonargs="">
+    <branch repo="github.com"
+            module="krh/ksim"/>
+  </meson>
+
   <meson id="libva" mesonargs="">
     <branch repo="github.com"
             module="intel/libva" />
+  </meson>
+
+  <meson id="xserver" mesonargs="-Dxwayland=true -Dxephyr=true -Dxorg=true -Dxkb_bin_dir=/usr/bin">
+    <branch repo="gitlab.fdo.org"
+            module="xorg/xserver" />
+    <dependencies>
+      <dep package="xkbcommon" />
+    </dependencies>
+  </meson>
+
+  <meson id="xkbcommon" mesonargs="">
+    <branch repo="github.com"
+            module="xkbcommon/libxkbcommon" />
   </meson>
 
   <meson id="libva-utils" mesonargs="">
@@ -121,23 +168,40 @@
     </dependencies>
   </meson>
 
+  <cmake id="waffle">
+    <branch repo="github.com"
+            module="waffle-gl/waffle" />
+    <dependencies>
+      <dep package="wayland" />
+    </dependencies>
+  </cmake>
+
+  <cmake id="Vulkan-Headers" cmakeargs="">
+    <branch repo="github.com"
+            module="KhronosGroup/Vulkan-Headers" />
+  </cmake>
+
+  <cmake id="Vulkan-Loader" cmakeargs="-DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/Vulkan-Loader" />
+    <dependencies>
+      <dep package="Vulkan-Headers" />
+    </dependencies>
+  </cmake>
+
   <cmake id="media-driver" cmakeargs="-DMEDIA_VERSION=2.0.0 -DBS_DIR_GMMLIB=$PWD/../gmmlib/Source/GmmLib/ -DBS_DIR_COMMON=$PWD/../gmmlib/Source/Common/ -DBS_DIR_INC=$PWD/../gmmlib/Source/inc/ -DBS_DIR_MEDIA=$PWD/../media-driver">
     <branch repo="github.com"
             module="intel/media-driver"/>
   </cmake>
 
-  <cmake id="glslang" cmakeargs="-DCMAKE_BUILD_TYPE=Debug">
-    <branch repo="github.com"
-            module="KhronosGroup/glslang"/>
-  </cmake>
-
-  <meson id="vkcube" mesonargs="">
-    <branch repo="github.com"
-            module="krh/vkcube" />
+  <autotools id="weston" autogenargs="--disable-setuid-install">
+    <branch repo="gitlab.fdo.org"
+            module="wayland/weston" />
     <dependencies>
-      <dep package="mesa" />
+      <dep package="wayland" />
+      <dep package="wayland-protocols" />
     </dependencies>
-  </meson>
+  </autotools>
 
   <!-- System depencies -->
   <systemmodule id="libX11">
