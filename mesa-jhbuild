@@ -2,7 +2,7 @@
 
 config=$PWD/mesa-jhbuild.conf
 if ! [ -f $config ]; then
-    config=$HOME/mesa/jhbuild/mesa-jhbuild.conf
+    config=$HOME/src/mesa-jhbuild/mesa-jhbuild.conf
 fi
 
 jhbuild -f $config $@
