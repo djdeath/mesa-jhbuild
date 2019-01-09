@@ -182,6 +182,24 @@
             module="KhronosGroup/Vulkan-Headers" />
   </cmake>
 
+  <cmake id="glslang" cmakeargs="-DCMAKE_BUILD_TYPE=Debug">
+    <branch repo="github.com"
+            module="KhronosGroup/glslang"/>
+  </cmake>
+
+  <cmake id="SPIRV-Headers" cmakeargs="">
+    <branch repo="github.com"
+            module="KhronosGroup/SPIRV-Headers"/>
+  </cmake>
+
+  <cmake id="SPIRV-Tools" cmakeargs="-DSPIRV-Headers_SOURCE_DIR=/home/djdeath/mesa/build -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/SPIRV-Tools"/>
+    <dependencies>
+      <dep package="SPIRV-Headers" />
+    </dependencies>
+  </cmake>
+
   <cmake id="Vulkan-Loader" cmakeargs="-DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-Loader" />
@@ -190,7 +208,33 @@
     </dependencies>
   </cmake>
 
-  <cmake id="media-driver" cmakeargs="-DMEDIA_VERSION=2.0.0 -DBS_DIR_GMMLIB=$PWD/../gmmlib/Source/GmmLib/ -DBS_DIR_COMMON=$PWD/../gmmlib/Source/Common/ -DBS_DIR_INC=$PWD/../gmmlib/Source/inc/ -DBS_DIR_MEDIA=$PWD/../media-driver">
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DGLSLANG_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/Vulkan-ValidationLayers"/>
+    <dependencies>
+      <dep package="Vulkan-Loader"/>
+      <dep package="glslang"/>
+      <dep package="SPIRV-Tools"/>
+    </dependencies>
+  </cmake>
+
+  <cmake id="Vulkan-Tools" cmakeargs="-DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DGLSLANG_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/Vulkan-Tools"/>
+    <dependencies>
+      <dep package="Vulkan-Loader"/>
+    </dependencies>
+  </cmake>
+
+  <cmake id="VulkanTools" cmakeargs="-DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_LOADER_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_VALIDATIONLAYERS_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_BUILD_TYPE=Debug -DBUILD_VIA=OFF -DBUILD_LAYERSVT=OFF" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="LunarG/VulkanTools"/>
+    <dependencies>
+      <dep package="Vulkan-Loader"/>
+    </dependencies>
+  </cmake>
+
+ <cmake id="media-driver" cmakeargs="-DMEDIA_VERSION=2.0.0 -DBS_DIR_GMMLIB=$PWD/../gmmlib/Source/GmmLib/ -DBS_DIR_COMMON=$PWD/../gmmlib/Source/Common/ -DBS_DIR_INC=$PWD/../gmmlib/Source/inc/ -DBS_DIR_MEDIA=$PWD/../media-driver">
     <branch repo="github.com"
             module="intel/media-driver"/>
   </cmake>
