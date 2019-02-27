@@ -261,6 +261,11 @@
     </dependencies>
   </autotools>
 
+  <cmake id="apitrace" cmakeargs="" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="apitrace/apitrace" />
+  </cmake>
+
   <!-- System depencies -->
   <systemmodule id="libX11">
     <pkg-config>x11.pc</pkg-config>
