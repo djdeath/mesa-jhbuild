@@ -268,6 +268,15 @@
             module="apitrace/apitrace" />
   </cmake>
 
+  <cmake id="sascha" cmakeargs="" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="SaschaWillems/Vulkan" />
+    <dependencies>
+      <dep package="mesa" />
+      <dep package="Vulkan-Loader" />
+    </dependencies>
+  </cmake>
+
   <!-- System depencies -->
   <systemmodule id="libX11">
     <pkg-config>x11.pc</pkg-config>
