@@ -15,7 +15,7 @@
               href="https://git.gnome.org/browse/"/>
 
   <meson id="libdrm" mesonargs="">
-    <branch repo="git.freedesktop.org"
+    <branch repo="gitlab.fdo.org"
             module="mesa/drm"/>
     <dependencies>
     </dependencies>
@@ -39,7 +39,7 @@
 
   <!-- skip-autogen="never" -->
   <meson id="mesa" mesonargs="-Dgles2=true -Ddri-drivers=i965 -Degl-platforms=x11,drm,wayland,surfaceless -Dgallium-drivers= -Dgbm=true -Dglvnd=true -Dvulkan-drivers=intel -Dtools=intel-ui -Dvulkan-overlay-layer=true">
-    <branch repo="git.freedesktop.org"
+    <branch repo="gitlab.fdo.org"
             module="mesa/mesa"/>
     <dependencies>
       <dep package="libdrm" />
@@ -57,7 +57,7 @@
   </meson>
 
   <autotools id="crucible" autogenargs="">
-    <branch repo="git.freedesktop.org"
+    <branch repo="gitlab.fdo.org"
             module="mesa/crucible"/>
     <dependencies>
       <dep package="mesa" />
