@@ -23,6 +23,9 @@
 
   <autotools id="wayland-protocols">
     <branch repo="git.freedesktop.org" module="wayland/wayland-protocols"/>
+    <dependencies>
+      <dep package="wayland"/>
+    </dependencies>
   </autotools>
 
   <autotools id="wayland"
@@ -32,7 +35,6 @@
       <dep package="libffi"/>
       <dep package="doxygen"/>
       <dep package="xmlto"/>
-      <dep package="wayland-protocols"/>
     </dependencies>
   </autotools>
 
@@ -44,7 +46,7 @@
     <dependencies>
       <dep package="libdrm" />
       <dep package="libX11" />
-      <dep package="wayland" />
+      <dep package="wayland-protocols" />
     </dependencies>
   </meson>
 
