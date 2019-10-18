@@ -100,18 +100,13 @@
 
   <cmake id="renderdoc"
          force-non-srcdir-builds="yes" use-ninja="no"
-         cmakeargs="-DCMAKE_BUILD_TYPE=Debug">
+         cmakeargs="-DCMAKE_BUILD_TYPE=Debug -DENABLE_PYRENDERDOC=ON">
     <branch repo="github.com"
             module="baldurk/renderdoc"
             revision="v1.x"/>
     <dependencies>
       <dep package="mesa" />
     </dependencies>
-  </cmake>
-
-  <cmake id="glslang" cmakeargs="-DCMAKE_BUILD_TYPE=Debug">
-    <branch repo="github.com"
-            module="KhronosGroup/glslang"/>
   </cmake>
 
   <cmake id="mdapi" cmakeargs="-DMD_PLATFORM=linux -DMD_BUILD_TYPE=debug">
@@ -127,10 +122,15 @@
     </dependencies>
   </meson>
 
-  <meson id="gputop" mesonargs="-Dnative_ui=true">
+  <meson id="gputop" mesonargs="-Dnative_ui=true -Dnative_ui_gtk=true">
     <branch repo="github.com"
             module="rib/gputop"/>
   </meson>
+
+  <cmake id="gpuvis" cmakeargs="">
+    <branch repo="github.com"
+            module="mikesart/gpuvis"/>
+  </cmake>
 
   <meson id="ksim" mesonargs="">
     <branch repo="github.com"
@@ -179,7 +179,7 @@
     </dependencies>
   </cmake>
 
-  <cmake id="glslang" cmakeargs="-DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+  <cmake id="glslang" cmakeargs="-DENABLE_HLSL=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/glslang"/>
   </cmake>
@@ -210,7 +210,7 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/mesa/build/include/vulkan -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/mesa/build/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-ValidationLayers"/>
     <dependencies>
