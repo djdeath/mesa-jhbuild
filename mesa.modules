@@ -38,6 +38,13 @@
     </dependencies>
   </autotools>
 
+  <autotools id="glvnd"
+             autogenargs="">
+    <branch repo="github.com" module="NVIDIA/libglvnd"/>
+    <dependencies>
+      <dep package="wayland-protocols"/>
+    </dependencies>
+  </autotools>
 
   <!-- skip-autogen="never" -->
   <meson id="mesa" mesonargs="-Dgles2=true -Ddri-drivers=i965 -Degl-platforms=x11,drm,wayland,surfaceless -Dgallium-drivers=iris -Dgbm=true -Dglvnd=true -Dvulkan-drivers=intel -Dtools=intel-ui -Dvulkan-overlay-layer=true -Dvulkan-timeline-semaphore-layer=true">
@@ -47,6 +54,7 @@
       <dep package="libdrm" />
       <dep package="libX11" />
       <dep package="wayland-protocols" />
+      <dep package="glvnd"/>
     </dependencies>
   </meson>
 
