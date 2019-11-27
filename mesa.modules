@@ -53,6 +53,7 @@
     <dependencies>
       <dep package="libdrm" />
       <dep package="libX11" />
+      <dep package="glvnd" />
       <dep package="wayland-protocols" />
       <dep package="glvnd"/>
     </dependencies>
