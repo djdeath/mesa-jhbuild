@@ -58,7 +58,7 @@
     </dependencies>
   </meson>
 
-  <meson id="igt" mesonargs="">
+  <meson id="igt" mesonargs="-Ddocs=disabled">
     <branch repo="gitlab.fdo.org"
             module="drm/igt-gpu-tools"/>
     <dependencies>
