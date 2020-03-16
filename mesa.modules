@@ -304,4 +304,39 @@
     <branch repo="system"/>
   </systemmodule>
 
+  <cmake id="media-driver" cmakeargs="-DBUILD_TYPE=Debug" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="intel/media-driver" />
+  </cmake>
+
+  <meson id="gstreamer">
+    <branch repo="gitlab.fdo.org"
+            module="gstreamer/gstreamer"/>
+  </meson>
+
+  <meson id="gst-plugins-base">
+    <branch repo="gitlab.fdo.org"
+            module="gstreamer/gst-plugins-base"/>
+  </meson>
+
+  <meson id="gst-plugins-good">
+    <branch repo="gitlab.fdo.org"
+            module="gstreamer/gst-plugins-good"/>
+  </meson>
+
+  <meson id="gst-plugins-bad">
+    <branch repo="gitlab.fdo.org"
+            module="gstreamer/gst-plugins-bad"/>
+  </meson>
+
+  <cmake id="media-sdk" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="Intel-Media-SDK/MediaSDK"/>
+  </cmake>
+
+  <meson id="gst-plugins-media-sdk" mesonargs="-DMFX_HOME=/home/djdeath/src/mesa">
+    <branch repo="github.com"
+            module="intel/gstreamer-media-SDK"/>
+  </meson>
+
 </moduleset>
