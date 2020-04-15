@@ -159,6 +159,11 @@
     </dependencies>
   </meson>
 
+  <meson id="xf86-video-intel" mesonargs="-Dinternal-debug=full">
+    <branch repo="gitlab.fdo.org"
+            module="xorg/driver/xf86-video-intel" />
+  </meson>
+
   <meson id="xkbcommon" mesonargs="">
     <branch repo="github.com"
             module="xkbcommon/libxkbcommon" />
