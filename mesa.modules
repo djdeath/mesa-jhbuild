@@ -55,6 +55,7 @@
       <dep package="glvnd" />
       <dep package="wayland-protocols" />
       <dep package="glvnd"/>
+      <dep package="glslang"/>
     </dependencies>
   </meson>
 
