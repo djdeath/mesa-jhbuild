@@ -28,15 +28,14 @@
     </dependencies>
   </autotools>
 
-  <autotools id="wayland"
-             autogenargs="--disable-documentation">
+  <meson id="wayland">
     <branch repo="gitlab.fdo.org" module="wayland/wayland"/>
     <dependencies>
       <dep package="libffi"/>
       <dep package="doxygen"/>
       <dep package="xmlto"/>
     </dependencies>
-  </autotools>
+  </meson>
 
   <autotools id="glvnd"
              autogenargs="">
