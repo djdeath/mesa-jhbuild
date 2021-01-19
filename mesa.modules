@@ -268,14 +268,14 @@
             module="intel/media-driver"/>
   </cmake>
 
-  <autotools id="weston" autogenargs="--disable-setuid-install">
+  <meson id="weston" mesonargs="">
     <branch repo="gitlab.fdo.org"
             module="wayland/weston" />
     <dependencies>
       <dep package="wayland" />
       <dep package="wayland-protocols" />
     </dependencies>
-  </autotools>
+  </meson>
 
   <cmake id="apitrace" cmakeargs="" force-non-srcdir-builds="yes">
     <branch repo="github.com"
