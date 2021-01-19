@@ -83,7 +83,7 @@
     </dependencies>
   </autotools>
 
-  <autotools id="vkcube" autogenargs="">
+  <autotools id="vkcube" autogenargs="-Dwayland-protected=true">
     <branch repo="github.com"
             module="krh/vkcube.git"/>
     <dependencies>
