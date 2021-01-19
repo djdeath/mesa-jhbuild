@@ -28,7 +28,7 @@
     </dependencies>
   </autotools>
 
-  <meson id="wayland">
+  <meson id="wayland" mesonargs="-Ddocumentation=false">
     <branch repo="gitlab.fdo.org" module="wayland/wayland"/>
     <dependencies>
       <dep package="libffi"/>
