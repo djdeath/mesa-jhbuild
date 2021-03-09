@@ -136,10 +136,10 @@
             module="rib/gputop"/>
   </meson>
 
-  <cmake id="gpuvis" cmakeargs="-DUSE_I915_PERF=ON">
+  <meson id="gpuvis" cmakeargs="-Duse_i915_perf=true">
     <branch repo="github.com"
             module="mikesart/gpuvis"/>
-  </cmake>
+  </meson>
 
   <meson id="ksim" mesonargs="">
     <branch repo="github.com"
