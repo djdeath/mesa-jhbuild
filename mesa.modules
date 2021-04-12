@@ -242,6 +242,11 @@
     </dependencies>
   </cmake>
 
+  <cmake id="llvm-spirv" cmakeargs="" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/SPIRV-LLVM-Translator" />
+  </cmake>
+
   <cmake id="VulkanTools" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/src/mesa -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/src/mesa/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_LOADER_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_VALIDATIONLAYERS_INSTALL_DIR=/home/djdeath/mesa/build -DBUILD_LAYERSVT=ON -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="LunarG/VulkanTools"/>
