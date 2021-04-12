@@ -247,6 +247,11 @@
             module="KhronosGroup/SPIRV-LLVM-Translator" />
   </cmake>
 
+  <cmake id="embree" force-non-srcdir-builds="yes" cmakeargs="-DEMBREE_ISPC_SUPPORT=OFF -DEMBREE_MAX_ISA=SSE4.2">
+    <branch repo="github.com"
+            module="embree/embree"/>
+  </cmake>
+
   <cmake id="VulkanTools" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/src/mesa -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/src/mesa/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_LOADER_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_VALIDATIONLAYERS_INSTALL_DIR=/home/djdeath/mesa/build -DBUILD_LAYERSVT=ON -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="LunarG/VulkanTools"/>
