@@ -37,6 +37,10 @@
     </dependencies>
   </meson>
 
+  <meson id="sixonix" mesonargs="">
+    <branch repo="gitlab.fdo.org" module="mesa/sixonix"/>
+  </meson>
+
   <autotools id="glvnd"
              autogenargs="">
     <branch repo="github.com" module="NVIDIA/libglvnd"/>
