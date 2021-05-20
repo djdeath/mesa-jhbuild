@@ -264,12 +264,9 @@
     </dependencies>
   </cmake>
 
-  <cmake id="VulkanSamples" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/src/mesa -DVULKAN_LOADER_INSTALL_DIR=/home/djdeath/src/mesa -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/src/mesa/include/vulkan -DBUILD_SAMPLE_LAYERS=1 -DBUILD_API_SAMPLES=OFF" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-Samples" cmakeargs="">
     <branch repo="github.com"
-            module="LunarG/VulkanSamples"/>
-    <dependencies>
-      <dep package="Vulkan-Loader"/>
-    </dependencies>
+            module="KhronosGroup/Vulkan-Samples"/>
   </cmake>
 
   <cmake id="vkrunner" cmakeargs="">
