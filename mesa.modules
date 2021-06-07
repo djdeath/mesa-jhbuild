@@ -264,9 +264,14 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-Samples" cmakeargs="">
+  <cmake id="Vulkan-Samples" cmakeargs="" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-Samples"/>
+  </cmake>
+
+  <cmake id="gfxreconstruct" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="LunarG/gfxreconstruct"/>
   </cmake>
 
   <cmake id="vkrunner" cmakeargs="">
