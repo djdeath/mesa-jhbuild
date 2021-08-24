@@ -228,7 +228,7 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/mesa/build/include/vulkan -DBUILD_TESTS=ON" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=/home/djdeath/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=/home/djdeath/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=/home/djdeath/mesa/build/include/vulkan -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-ValidationLayers"/>
     <dependencies>
