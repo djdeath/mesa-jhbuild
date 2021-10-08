@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PATH=$PATH:$HOME/.local/bin
+
 config=$PWD/mesa-jhbuild.conf
 if ! [ -f $config ]; then
     config=$HOME/src/mesa-jhbuild/mesa-jhbuild.conf
