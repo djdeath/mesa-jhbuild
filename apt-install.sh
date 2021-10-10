@@ -24,3 +24,5 @@ sudo apt-get install emacs jhbuild python3-pip screen libxml2-dev libxcb-glx0-de
 sudo apt-get remove meson
 
 pip3 install meson
+
+sudo usermod -a -G render,video $USER
