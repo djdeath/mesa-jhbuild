@@ -4,6 +4,8 @@ git config --global user.name "Lionel Landwerlin"
 git config --global user.email lionel.g.landwerlin@intel.com
 git config --global core.editor emacs
 
+sudo usermod -a -G render,video $USER
+
 mkdir -p ~/.ssh
 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC+9tH8pq2uzePGign9lyV3SbViGHlWqzzXDbjpqvwL2wpZB1l+8oLsQ82gl4D077rUbp7nc9EdruvdzYx7lCkhUEtzhKmdK98EskzBEQ8TlsFYLGjGPqcDcvVBRSitwyV3VfQie1o8uhzqhyc2JWX37SwKh9GRHmMOF0GYNj22SVxOE4/jlo+t6rOSO2Z+/XMPt7rJvPkMX8wZ8SkD/L4aCeANFOSU7Z+Myzn1abWPn1FflD1wO7gazGTgw+Mmp+YBKxFuLyjWe+Sb4TuJIyP/Y2rlmHOLBqXdcfqU3zzVqxk04sN+WpOKnHFTMBXvfViRklVZgGY3CKIA3FPfqNbMSIpU0aRx7+xPJCC2XUaGpZf4SG3diPmtSWWVsKbfEkpHA6ABUT8aIhp44LAzpyqwik6UfNNloNf1IzG3ZvkSqSbbOJeLSym4B4Tkz2cUtKfwYIdQTsN8q4J24LMJ10ZamFF/3MZEUP6OsOpobDyhEHkbGsxd4ezQCqbddRVLgJaruDbTamn3zf+OgAoOz+Xs2q5HMuf47YnKmxIrMutNcDAboqPI0MSRB1AxTdXxDjLIWtgnVhOJnntz/dOAOX0GpgZa4cGKejCx61X0agdDt+4Wiw2887gqQY4jQaSFtq1MnomJ75vAK+UF7zOElJ3VywuFa2rlvr6tuSpd5NmDAQ== lionel.g.landwerlin@intel.com" > ~/.ssh/authorized_keys
 
@@ -25,4 +27,10 @@ sudo apt-get remove meson
 
 pip3 install meson
 
-sudo usermod -a -G render,video $USER
+# Emacs stuff
+cd ~/src
+git clone https://github.com/djdeath/custom-modes
+cd -
+
+sudo apt-get install emacsen-common emacs-el emacs-common-non-dfsg
+ln -s ~/src/custom-modes/.emacs.el ~/.emacs.el
