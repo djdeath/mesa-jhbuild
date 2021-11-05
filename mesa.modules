@@ -233,6 +233,7 @@
             module="KhronosGroup/Vulkan-ValidationLayers"/>
     <dependencies>
       <dep package="Vulkan-Loader"/>
+      <dep package="SPIRV-Headers"/>
       <dep package="glslang"/>
       <dep package="SPIRV-Tools"/>
     </dependencies>
