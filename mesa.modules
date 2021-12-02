@@ -21,14 +21,14 @@
     </dependencies>
   </meson>
 
-  <autotools id="wayland-protocols">
+  <meson id="wayland-protocols">
     <branch repo="git.freedesktop.org"
             module="wayland/wayland-protocols"
             revision="main"/>
     <dependencies>
       <dep package="wayland"/>
     </dependencies>
-  </autotools>
+  </meson>
 
   <meson id="wayland" mesonargs="-Ddocumentation=false">
     <branch repo="gitlab.fdo.org"
