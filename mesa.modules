@@ -22,14 +22,18 @@
   </meson>
 
   <autotools id="wayland-protocols">
-    <branch repo="git.freedesktop.org" module="wayland/wayland-protocols"/>
+    <branch repo="git.freedesktop.org"
+            module="wayland/wayland-protocols"
+            revision="main"/>
     <dependencies>
       <dep package="wayland"/>
     </dependencies>
   </autotools>
 
   <meson id="wayland" mesonargs="-Ddocumentation=false">
-    <branch repo="gitlab.fdo.org" module="wayland/wayland"/>
+    <branch repo="gitlab.fdo.org"
+            module="wayland/wayland"
+            revision="main"/>
     <dependencies>
       <dep package="libffi"/>
       <dep package="doxygen"/>
