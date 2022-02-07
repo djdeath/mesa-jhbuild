@@ -193,13 +193,13 @@
     </dependencies>
   </meson>
 
-  <cmake id="waffle">
-    <branch repo="github.com"
-            module="waffle-gl/waffle" />
+  <meson id="waffle">
+    <branch repo="gitlab.fdo.org"
+            module="mesa/waffle" />
     <dependencies>
       <dep package="wayland" />
     </dependencies>
-  </cmake>
+  </meson>
 
   <cmake id="glslang" cmakeargs="-DENABLE_HLSL=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
