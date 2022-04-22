@@ -54,7 +54,7 @@
   </autotools>
 
   <!-- skip-autogen="never" -->
-  <meson id="mesa" mesonargs="-Dplatforms=x11,wayland -Dgallium-drivers=iris,crocus -Dgbm=true -Dglvnd=true -Dvulkan-drivers=intel -Dtools=intel-ui,drm-shim -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=true -Dperfetto=false">
+  <meson id="mesa" mesonargs="-Dplatforms=x11,wayland -Dgallium-drivers=iris,crocus -Dgbm=true -Dglvnd=true -Dvulkan-drivers=intel -Dtools=intel-ui,drm-shim -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=true -Dperfetto=false -Dintel-clc=enabled">
     <branch repo="gitlab.fdo.org"
             module="mesa/mesa"/>
     <dependencies>
@@ -254,7 +254,7 @@
   <cmake id="llvm-spirv" cmakeargs="" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/SPIRV-LLVM-Translator"
-            revision="062788212ce7544b896afbce9dd210c4fea5c0ea" />
+            tag="062788212ce7544b896afbce9dd210c4fea5c0ea" />
   </cmake>
 
   <cmake id="embree" force-non-srcdir-builds="yes" cmakeargs="-DEMBREE_ISPC_SUPPORT=OFF -DEMBREE_MAX_ISA=SSE4.2">
