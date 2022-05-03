@@ -208,7 +208,8 @@
 
   <cmake id="Vulkan-Headers" cmakeargs="">
     <branch repo="github.com"
-            module="KhronosGroup/Vulkan-Headers"/>
+            module="KhronosGroup/Vulkan-Headers"
+            revision="main" />
   </cmake>
 
   <cmake id="SPIRV-Headers" cmakeargs="">
