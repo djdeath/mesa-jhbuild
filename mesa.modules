@@ -372,4 +372,11 @@
             module="intel/gstreamer-media-SDK"/>
   </meson>
 
+  <cmake id="fossilize"
+         force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="ValveSoftware/Fossilize"
+            revision="master"/>
+  </cmake>
+
 </moduleset>
