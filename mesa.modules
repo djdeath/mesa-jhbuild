@@ -379,4 +379,10 @@
             revision="master"/>
   </cmake>
 
+  <meson id="gamescope">
+    <branch repo="github.com"
+            module="Plagman/gamescope"
+            revision="master"/>
+  </meson>
+
 </moduleset>
