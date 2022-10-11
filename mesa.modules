@@ -385,4 +385,10 @@
             revision="master"/>
   </meson>
 
+  <meson id="vkoverhead">
+    <branch repo="github.com"
+            module="zmike/vkoverhead"
+            revision="main"/>
+  </meson>
+
 </moduleset>
