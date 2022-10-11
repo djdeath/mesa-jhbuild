@@ -54,7 +54,7 @@
   </autotools>
 
   <!-- skip-autogen="never" -->
-  <meson id="mesa" mesonargs="-Dplatforms=x11,wayland -Dgallium-drivers=iris,crocus -Dgbm=true -Dglvnd=true -Dvulkan-drivers=intel -Dtools=intel-ui,drm-shim -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=true -Dperfetto=false -Dintel-clc=enabled">
+  <meson id="mesa" mesonargs="-Dplatforms=x11,wayland -Dgallium-drivers=iris,crocus -Dgbm=true -Dglvnd=true -Dvulkan-drivers=intel -Dtools=intel-ui,drm-shim -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=true -Dperfetto=true -Dintel-clc=enabled">
     <branch repo="gitlab.fdo.org"
             module="mesa/mesa"/>
     <dependencies>
