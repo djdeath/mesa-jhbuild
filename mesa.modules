@@ -108,7 +108,7 @@
     </dependencies>
   </autotools>
 
-  <cmake id="piglit">
+  <cmake id="piglit" cmakeargs="-DPIGLIT_BUILD_CL_TESTS=on">
     <branch repo="gitlab.fdo.org"
             module="mesa/piglit"/>
     <dependencies>
