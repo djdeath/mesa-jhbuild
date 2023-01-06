@@ -12,7 +12,9 @@
   <repository type="git" name="gitlab.fdo.org"
               href="https://gitlab.freedesktop.org"/>
   <repository type="git" name="git.gnome.org" default="yes"
-              href="https://git.gnome.org/browse/"/>
+              href="https://gitlab.gnome.org/"/>
+  <repository type="tarball" name="sourceforge"
+              href="http://downloads.sourceforge.net/sourceforge"/>
 
   <meson id="libdrm" mesonargs="">
     <branch repo="gitlab.fdo.org"
@@ -410,5 +412,11 @@
             module="GNOME/mutter"
             revision="main"/>
   </meson>
+
+  <autotools id="libpng12"
+             autogen-sh="configure">
+    <branch repo="sourceforge" module="libpng/libpng-${version}.tar.xz" version="1.2.59"
+            hash="md5:e120f48f4e27e72255bc366c73aae1db"/>
+  </autotools>
 
 </moduleset>
