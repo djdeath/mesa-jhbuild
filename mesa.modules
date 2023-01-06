@@ -399,4 +399,16 @@
             revision="master"/>
   </meson>
 
+  <meson id="vkd3d" mesonargs="-Denable_descriptor_qa=true -Denable_tests=true">
+    <branch repo="github.com"
+            module="HansKristian-Work/vkd3d-proton"
+            revision="master"/>
+  </meson>
+
+  <meson id="mutter" mesonargs="">
+    <branch repo="git.gnome.org"
+            module="GNOME/mutter"
+            revision="main"/>
+  </meson>
+
 </moduleset>
