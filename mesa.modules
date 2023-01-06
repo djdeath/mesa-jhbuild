@@ -307,7 +307,7 @@
     </dependencies>
   </meson>
 
-  <cmake id="apitrace" cmakeargs="" force-non-srcdir-builds="yes">
+  <cmake id="apitrace" cmakeargs="-DBUILD_TESTING=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="apitrace/apitrace" />
   </cmake>
