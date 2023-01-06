@@ -146,7 +146,7 @@
             module="rib/gputop"/>
   </meson>
 
-  <meson id="gpuvis" cmakeargs="-Duse_i915_perf=true">
+  <meson id="gpuvis" mesonargs="-Duse_i915_perf=true">
     <branch repo="github.com"
             module="mikesart/gpuvis"/>
   </meson>
