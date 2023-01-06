@@ -16,7 +16,8 @@
 
   <meson id="libdrm" mesonargs="">
     <branch repo="gitlab.fdo.org"
-            module="mesa/drm"/>
+            module="mesa/drm"
+            revision="main"/>
     <dependencies>
     </dependencies>
   </meson>
