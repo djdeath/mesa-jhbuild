@@ -207,7 +207,8 @@
 
   <cmake id="glslang" cmakeargs="-DENABLE_HLSL=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="KhronosGroup/glslang"/>
+            module="KhronosGroup/glslang"
+            revision="main" />
   </cmake>
 
   <cmake id="Vulkan-Headers" cmakeargs="">
@@ -218,7 +219,8 @@
 
   <cmake id="SPIRV-Headers" cmakeargs="">
     <branch repo="github.com"
-            module="KhronosGroup/SPIRV-Headers" />
+            module="KhronosGroup/SPIRV-Headers"
+            revision="main" />
   </cmake>
 
   <cmake id="SPIRV-Tools" cmakeargs="-DSPIRV-Headers_SOURCE_DIR=$HOME/mesa/src/SPIRV-Headers" force-non-srcdir-builds="yes">
@@ -231,15 +233,17 @@
 
   <cmake id="Vulkan-Loader" cmakeargs="-DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="KhronosGroup/Vulkan-Loader"/>
+            module="KhronosGroup/Vulkan-Loader"
+            revision="main" />
     <dependencies>
       <dep package="Vulkan-Headers"/>
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DBUILD_TESTS=OFF -DBUILD_LAYER_SUPPORT_FILES=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="KhronosGroup/Vulkan-ValidationLayers"/>
+            module="KhronosGroup/Vulkan-ValidationLayers"
+            revision="main" />
     <dependencies>
       <dep package="Vulkan-Loader"/>
       <dep package="SPIRV-Headers"/>
@@ -267,9 +271,10 @@
             module="embree/embree"/>
   </cmake>
 
-  <cmake id="VulkanTools" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/src/mesa -DCMAKE_INSTALL_INCLUDEDIR=$HOME/src/mesa/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DVULKAN_LOADER_INSTALL_DIR=$HOME/mesa/build -DVULKAN_VALIDATIONLAYERS_INSTALL_DIR=$HOME/mesa/build -DBUILD_LAYERSVT=ON -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
+  <cmake id="VulkanTools" cmakeargs="-DCMAKE_INSTALL_INCLUDEDIR=$HOME/src/mesa/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DVULKAN_LOADER_INSTALL_DIR=$HOME/mesa/build -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="LunarG/VulkanTools"/>
+            module="LunarG/VulkanTools"
+            revision="main" />
     <dependencies>
       <dep package="Vulkan-Loader"/>
     </dependencies>
