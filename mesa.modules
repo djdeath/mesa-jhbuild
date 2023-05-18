@@ -254,7 +254,8 @@
 
   <cmake id="Vulkan-Tools" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DCMAKE_BUILD_TYPE=Debug" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="KhronosGroup/Vulkan-Tools"/>
+            module="KhronosGroup/Vulkan-Tools"
+            revision="main"/>
     <dependencies>
       <dep package="Vulkan-Loader"/>
     </dependencies>
