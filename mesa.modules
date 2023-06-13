@@ -225,7 +225,8 @@
 
   <cmake id="SPIRV-Tools" cmakeargs="-DSPIRV-Headers_SOURCE_DIR=$HOME/mesa/src/SPIRV-Headers" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="KhronosGroup/SPIRV-Tools"/>
+            module="KhronosGroup/SPIRV-Tools"
+            revision="main" />
     <dependencies>
       <dep package="SPIRV-Headers"/>
     </dependencies>
