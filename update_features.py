@@ -34,9 +34,7 @@ def main():
 
     json_data = json.load(json_file)
 
-    ext_table = {}
-    for ext in json_data['ArrayOfVkExtensionProperties']:
-        ext_table[ext['extensionName']] = True
+    ext_table = json_data['capabilities']['device']['extensions']
 
     lines_before = in_file.readlines()
 
