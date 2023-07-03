@@ -52,9 +52,7 @@ def main():
 
             if not list_has_anv(drv_list) and ext_name in ext_table:
                 drv_list.append('anv')
-                print(drv_list)
                 drv_list.sort()
-                print(drv_list)
                 if status == "not started":
                     status = "DONE"
                 lines_after.append("{0}{1}{2}{3}{4}({5})\n".format(r[1], ext_name, r[3], status, r[5], ', '.join(drv_list)))
