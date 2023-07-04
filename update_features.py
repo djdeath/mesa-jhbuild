@@ -5,12 +5,14 @@ import re
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument('-i', '--input', type=str,
+    p.add_argument('-i', '--input', type=str, required=True,
                    help='Input file for the features.txt')
     p.add_argument('-o', '--output', type=str,
                    help='Output file for the features.txt')
-    p.add_argument('-j', '--json', type=str,
+    p.add_argument('-j', '--json', type=str, required=True,
                    help='Vulkaninfo json file')
+    p.add_argument('-d', '--driver', type=str, required=True,
+                   help='Driver name')
 
     pargs = p.parse_args()
 
@@ -19,9 +21,9 @@ def parse_args():
 
     return pargs
 
-def list_has_anv(drvs):
+def list_has_driver(drvs, name):
     for d in drvs:
-        if 'anv' in d:
+        if d.startswith(name):
             return True
     return False
 
@@ -34,7 +36,8 @@ def main():
 
     json_data = json.load(json_file)
 
-    ext_table = json_data['capabilities']['device']['extensions']
+    drv_ext_table = json_data['capabilities']['device']['extensions']
+    features_ext_table = {}
 
     lines_before = in_file.readlines()
 
@@ -48,8 +51,10 @@ def main():
             status = r[4]
             drv_list = r[6].replace("(", "").replace(")", "").replace(" ", "").split(",")
 
-            if not list_has_anv(drv_list) and ext_name in ext_table:
-                drv_list.append('anv')
+            features_ext_table[ext_name] = True
+
+            if not list_has_driver(drv_list, pargs.driver) and ext_name in drv_ext_table:
+                drv_list.append(pargs.driver)
                 drv_list.sort()
                 if status == "not started":
                     status = "DONE"
@@ -58,6 +63,10 @@ def main():
                 lines_after.append(l)
         else:
             lines_after.append(l)
+
+    for k, v in drv_ext_table.items():
+        if k not in features_ext_table:
+            print("Missing features {0}".format(k))
 
     for l in lines_after:
         out_file.write(l)
