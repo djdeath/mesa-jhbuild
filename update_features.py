@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+#
+# Usage :
+#  1. Generate a json file with vulkaninfo :
+#     $ intel_stub_gpu -p skl vulkaninfo -j -o skl.json
+#  2. Generate feature file :
+#     $ ./update_features.py -i /mesa-repo/docs/features.txt -o features.txt -d anv -j skl.json
+
 import argparse
 import json
 import os
