@@ -15,6 +15,10 @@
               href="https://gitlab.gnome.org/"/>
   <repository type="tarball" name="sourceforge"
               href="http://downloads.sourceforge.net/sourceforge"/>
+  <repository type="git" name="ffmpeg.org"
+              href="https://git.ffmpeg.org/"/>
+  <repository type="git" name="videolan.org"
+              href="https://code.videolan.org/"/>
 
   <meson id="libdrm" mesonargs="">
     <branch repo="gitlab.fdo.org"
@@ -406,6 +410,28 @@
     <branch repo="github.com"
             module="intel/libva"
             revision="master"/>
+  </meson>
+
+  <autotools id="ffmpeg">
+    <branch repo="ffmpeg.org"
+            module="ffmpeg"
+            revision="master"/>
+  </autotools>>
+
+  <meson id="libplacebo" mesonargs="-Dglslang=enabled">
+    <branch repo="videolan.org"
+            module="videolan/libplacebo"
+            revision="master"/>
+  </meson>
+
+  <meson id="mpv" mesonargs="-Dvulkan=enabled -Dlibplacebo-next=enabled">
+    <branch repo="github.com"
+            module="mpv-player/mpv"
+            revision="main"/>
+    <dependencies>
+      <dep package="ffmpeg"/>
+      <dep package="libplacebo"/>
+    </dependencies>
   </meson>
 
   <meson id="vkd3d" mesonargs="-Denable_descriptor_qa=true -Denable_tests=true">
