@@ -427,7 +427,7 @@
   <meson id="mpv" mesonargs="-Dvulkan=enabled -Dlibplacebo-next=enabled">
     <branch repo="github.com"
             module="mpv-player/mpv"
-            revision="main"/>
+            revision="master"/>
     <dependencies>
       <dep package="ffmpeg"/>
       <dep package="libplacebo"/>
