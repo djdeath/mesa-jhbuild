@@ -209,7 +209,7 @@
     </dependencies>
   </meson>
 
-  <cmake id="glslang" cmakeargs="-DENABLE_HLSL=ON" force-non-srcdir-builds="yes">
+  <cmake id="glslang" cmakeargs="-DENABLE_HLSL=ON -DALLOW_EXTERNAL_SPIRV_TOOLS=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/glslang"
             revision="main" />
