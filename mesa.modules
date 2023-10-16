@@ -277,7 +277,7 @@
             module="embree/embree"/>
   </cmake>
 
-  <cmake id="VulkanTools" cmakeargs="-DCMAKE_INSTALL_INCLUDEDIR=$HOME/src/mesa/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DVULKAN_LOADER_INSTALL_DIR=$HOME/mesa/build -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
+  <cmake id="VulkanTools" cmakeargs="-DCMAKE_INSTALL_INCLUDEDIR=$HOME/src/mesa/include/vulkan -DCMAKE_BUILD_TYPE=Debug -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DVULKAN_LOADER_INSTALL_DIR=$HOME/mesa/build -DVULKAN_VALIDATIONLAYERS_INSTALL_DIR=$HOME/mesa/build -DBUILD_TESTS=OFF -DBUILD_VIA=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="LunarG/VulkanTools"
             revision="main" />
@@ -286,9 +286,10 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-Samples" cmakeargs="" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-Samples" cmakeargs="-DVKB_VALIDATION_LAYERS=OFF -DVKB_VULKAN_DEBUG=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
-            module="KhronosGroup/Vulkan-Samples"/>
+            module="KhronosGroup/Vulkan-Samples"
+            revision="main" />
   </cmake>
 
   <cmake id="nv_tracing" cmakeargs="" force-non-srcdir-builds="yes">
@@ -311,7 +312,7 @@
             module="intel/media-driver"/>
   </cmake>
 
-  <meson id="weston" mesonargs="">
+  <meson id="weston" mesonargs="-Dxwayland-path=$HOME/mesa/build/bin/Xwayland">
     <branch repo="gitlab.fdo.org"
             module="wayland/weston" />
     <dependencies>
