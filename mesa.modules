@@ -245,12 +245,22 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DBUILD_TESTS=OFF -DBUILD_LAYER_SUPPORT_FILES=ON" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-Utility-Libraries" cmakeargs="" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/Vulkan-Utility-Libraries"
+            revision="main" />
+    <dependencies>
+      <dep package="Vulkan-Headers"/>
+    </dependencies>
+  </cmake>
+
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-ValidationLayers"
             revision="main" />
     <dependencies>
       <dep package="Vulkan-Loader"/>
+      <dep package="Vulkan-Utility-Libraries"/>
       <dep package="SPIRV-Headers"/>
       <dep package="glslang"/>
       <dep package="SPIRV-Tools"/>
