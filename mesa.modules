@@ -445,7 +445,7 @@
     </dependencies>
   </meson>
 
-  <meson id="vkd3d" mesonargs="-Denable_descriptor_qa=true -Denable_tests=true">
+  <meson id="vkd3d-proton" mesonargs="-Denable_descriptor_qa=true -Denable_tests=true">
     <branch repo="github.com"
             module="HansKristian-Work/vkd3d-proton"
             revision="master"/>
