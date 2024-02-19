@@ -283,7 +283,7 @@
   <cmake id="llvm-spirv" cmakeargs="" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/SPIRV-LLVM-Translator"
-            tag="062788212ce7544b896afbce9dd210c4fea5c0ea" />
+            tag="e0c9de83cc289f60072b8e3c80d3ae9dc98af363" />
   </cmake>
 
   <cmake id="embree" force-non-srcdir-builds="yes" cmakeargs="-DEMBREE_ISPC_SUPPORT=OFF -DEMBREE_MAX_ISA=SSE4.2">
