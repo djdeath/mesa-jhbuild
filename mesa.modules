@@ -48,6 +48,10 @@
     </dependencies>
   </meson>
 
+  <meson id="gtk" mesonargs="">
+    <branch repo="git.gnome.org" module="GNOME/gtk"/>
+  </meson>
+
   <meson id="sixonix" mesonargs="">
     <branch repo="gitlab.fdo.org" module="mesa/sixonix"/>
   </meson>
