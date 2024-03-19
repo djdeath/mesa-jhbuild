@@ -249,6 +249,21 @@
     </dependencies>
   </cmake>
 
+  <cmake id="OpenCL-Headers" cmakeargs="">
+    <branch repo="github.com"
+            module="KhronosGroup/OpenCL-Headers"
+            revision="main" />
+  </cmake>
+
+  <cmake id="OpenCL-ICD-Loader" cmakeargs="-DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/OpenCL-ICD-Loader"
+            revision="main" />
+    <dependencies>
+      <dep package="OpenCL-Headers"/>
+    </dependencies>
+  </cmake>
+
   <cmake id="Vulkan-Utility-Libraries" cmakeargs="" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-Utility-Libraries"
