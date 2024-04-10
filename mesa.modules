@@ -87,7 +87,7 @@
     </dependencies>
   </meson>
 
-  <meson id="crucible" mesonargs="-DVK_EXT_mesh_shader=enabled">
+  <meson id="crucible" mesonargs="">
     <branch repo="gitlab.fdo.org"
             module="mesa/crucible"/>
     <dependencies>
