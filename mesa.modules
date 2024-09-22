@@ -5,8 +5,6 @@
 <moduleset>
 
   <repository type="system" name="system"/>
-  <repository type="git" name="git.freedesktop.org"
-              href="https://anongit.freedesktop.org/git/"/>
   <repository type="git" name="github.com"
               href="https://github.com/"/>
   <repository type="git" name="gitlab.fdo.org"
@@ -29,7 +27,7 @@
   </meson>
 
   <meson id="wayland-protocols">
-    <branch repo="git.freedesktop.org"
+    <branch repo="gitlab.fdo.org"
             module="wayland/wayland-protocols"
             revision="main"/>
     <dependencies>
@@ -96,7 +94,7 @@
   </meson>
 
   <autotools id="demos" autogenargs="">
-    <branch repo="git.freedesktop.org"
+    <branch repo="gitlab.fdo.org"
             module="mesa/demos"/>
     <dependencies>
       <dep package="mesa" />
