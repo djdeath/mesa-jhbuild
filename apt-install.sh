@@ -25,7 +25,8 @@ echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIONWZnl+XiZoKzpQYyoVLNaCW63KIsK1gNzcKB
 sudo apt-get install emacs python3-pip screen libxml2-dev libxcb-glx0-dev libxcb-damage0-dev \
      libxcb-present-dev libxshmfence-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libepoxy-dev \
      libgtk-3-dev python3-ply libembree-dev libpciaccess-dev libtool cmake flex libxxf86vm-dev bison \
-     valgrind libwaffle-dev python3-numpy python3-mako meson socat python3-pil.imagetk python3-pil
+     valgrind libwaffle-dev python3-numpy python3-mako meson socat python3-pil.imagetk python3-pil \
+     7zip
 #sudo apt-get remove meson
 
 #pip3 install meson
