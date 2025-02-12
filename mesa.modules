@@ -215,6 +215,9 @@
     <branch repo="github.com"
             module="KhronosGroup/glslang"
             revision="main" />
+    <dependencies>
+      <dep package="SPIRV-Tools" />
+    </dependencies>
   </cmake>
 
   <cmake id="Vulkan-Headers" cmakeargs="">
