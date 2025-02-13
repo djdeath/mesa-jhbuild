@@ -63,7 +63,7 @@
   </autotools>
 
   <!-- skip-autogen="never" -->
-  <meson id="mesa" mesonargs="-Dgallium-opencl=disabled -Dplatforms=x11,wayland -Dgallium-drivers=zink -Dgbm=enabled -Dglvnd=true -Dvulkan-drivers=intel -Dtools=drm-shim,intel -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=enabled -Dperfetto=true -Dgallium-va=disabled">
+  <meson id="mesa" mesonargs="-Dgallium-opencl=disabled -Dplatforms=x11,wayland -Dgallium-drivers=iris,zink -Dgbm=enabled -Dglvnd=true -Dvulkan-drivers=intel -Dtools=drm-shim,intel -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=enabled -Dperfetto=true -Dgallium-va=disabled">
     <branch repo="gitlab.fdo.org"
             module="mesa/mesa"/>
     <dependencies>
