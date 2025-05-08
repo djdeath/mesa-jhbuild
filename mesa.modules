@@ -444,8 +444,8 @@
   </meson>
 
   <autotools id="ffmpeg">
-    <branch repo="ffmpeg.org"
-            module="ffmpeg"
+    <branch repo="github.com"
+            module="FFmpeg/FFmpeg"
             revision="master"/>
   </autotools>>
 
