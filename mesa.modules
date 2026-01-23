@@ -67,7 +67,6 @@
     <branch repo="gitlab.fdo.org"
             module="mesa/mesa"/>
     <dependencies>
-      <dep package="libva" />
       <dep package="libdrm" />
       <dep package="libX11" />
       <dep package="glvnd" />
