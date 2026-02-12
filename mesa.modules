@@ -424,6 +424,13 @@
             revision="master"/>
   </cmake>
 
+  <cmake id="vkpeak"
+         force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="nihui/vkpeak"
+            revision="master"/>
+  </cmake>
+
   <meson id="gamescope">
     <branch repo="github.com"
             module="Plagman/gamescope"
