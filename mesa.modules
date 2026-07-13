@@ -249,7 +249,7 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-Loader" cmakeargs="-DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-Loader" cmakeargs="-DUPDATE_DEPS=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-Loader"
             revision="main" />
@@ -273,7 +273,7 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-Utility-Libraries" cmakeargs="" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-Utility-Libraries" cmakeargs="-DUPDATE_DEPS=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-Utility-Libraries"
             revision="main" />
@@ -282,7 +282,17 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DBUILD_TESTS=OFF" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-Profiles" cmakeargs="-DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="KhronosGroup/Vulkan-Profiles"
+            revision="main" />
+    <dependencies>
+      <dep package="Vulkan-Headers"/>
+      <dep package="Vulkan-Utility-Libraries"/>
+    </dependencies>
+  </cmake>
+
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DGLSLANG_INSTALL_DIR=$HOME/mesa/build -DVULKAN_HEADERS_INSTALL_DIR=$HOME/mesa/build -DSPIRV_HEADERS_INSTALL_DIR=$HOME/mesa/build -DCMAKE_INSTALL_INCLUDEDIR=$HOME/mesa/build/include/vulkan -DBUILD_TESTS=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-ValidationLayers"
             revision="main" />
