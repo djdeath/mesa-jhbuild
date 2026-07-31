@@ -503,6 +503,12 @@
     </dependencies>
   </meson>
 
+  <meson id="vkmark" mesonargs="">
+    <branch repo="github.com"
+            module="vkmark/vkmark"
+            revision="master"/>
+  </meson>
+
   <meson id="vkd3d-proton" mesonargs="-Denable_descriptor_qa=true -Denable_tests=true">
     <branch repo="github.com"
             module="HansKristian-Work/vkd3d-proton"
