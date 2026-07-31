@@ -398,6 +398,11 @@
     </dependencies>
   </cmake>
 
+  <cmake id="VulkanProfiler" cmakeargs="" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="lstalmir/VulkanProfiler" />
+  </cmake>
+
   <!-- System depencies -->
   <systemmodule id="libX11">
     <pkg-config>x11.pc</pkg-config>
