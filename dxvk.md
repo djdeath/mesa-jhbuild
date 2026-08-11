@@ -11,4 +11,5 @@ Copy the DXVK dll next to the apitrace windows binaries.
 
 Replay the trace :
 
+  $ export WINEDLLOVERRIDES="dxgi=n,b;d3d9=n,b;d3d11=n,b"
   $ wine ./d3dretrace.exe /path/to/trace.trace
