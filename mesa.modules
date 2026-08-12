@@ -54,24 +54,14 @@
     <branch repo="gitlab.fdo.org" module="mesa/sixonix"/>
   </meson>
 
-  <autotools id="glvnd"
-             autogenargs="">
-    <branch repo="github.com" module="NVIDIA/libglvnd"/>
-    <dependencies>
-      <dep package="wayland-protocols"/>
-    </dependencies>
-  </autotools>
-
   <!-- skip-autogen="never" -->
-  <meson id="mesa" mesonargs="-Dplatforms=x11,wayland -Dgallium-drivers=iris,zink -Dgbm=enabled -Dglvnd=true -Dvulkan-drivers=intel -Dtools=drm-shim,intel -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=enabled -Dperfetto=true -Dgallium-va=disabled">
+  <meson id="mesa" mesonargs="-Dplatforms=x11,wayland -Dgallium-drivers=iris,zink -Dgbm=enabled -Dglvnd=false -Dvulkan-drivers=intel -Dtools=drm-shim,intel -Dvulkan-layers=overlay -Dbuild-tests=true -Dvalgrind=enabled -Dperfetto=true -Dgallium-va=disabled">
     <branch repo="gitlab.fdo.org"
             module="mesa/mesa"/>
     <dependencies>
       <dep package="libdrm" />
       <dep package="libX11" />
-      <dep package="glvnd" />
       <dep package="wayland-protocols" />
-      <dep package="glvnd"/>
       <dep package="glslang"/>
     </dependencies>
   </meson>
