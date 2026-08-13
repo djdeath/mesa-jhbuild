@@ -517,4 +517,9 @@
             hash="md5:e120f48f4e27e72255bc366c73aae1db"/>
   </autotools>
 
+  <autotools id="rlwrap"
+             autogen-sh="autoreconf">
+    <branch repo="github.com" module="hanslub42/rlwrap" revision="master"/>
+  </autotools>
+
 </moduleset>
