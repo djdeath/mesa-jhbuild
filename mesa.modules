@@ -409,6 +409,11 @@
             module="intel/media-driver" />
   </cmake>
 
+  <cmake id="vulkan-shader-profiler" cmakeargs="" force-non-srcdir-builds="yes">
+    <branch repo="github.com"
+            module="rjodinchr/vulkan-shader-profiler" />
+  </cmake>
+
   <meson id="gstreamer">
     <branch repo="gitlab.fdo.org"
             module="gstreamer/gstreamer"/>
