@@ -1,5 +1,6 @@
 # How to compile Angle
 
+    mkdir angle; cd angle; fetch angle
     gn gen out/Debug
     ninja -C out/Debug
 
