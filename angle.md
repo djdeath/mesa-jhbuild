@@ -1,6 +1,6 @@
 # How to compile Angle
 
-    mkdir angle; cd angle; fetch angle
+    mkdir angle; cd angle; fetch angle # Wait for 10 fucking hours to download 20 fucking GiB
     gn gen out/Debug
     ninja -C out/Debug
 
