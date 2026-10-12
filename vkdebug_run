@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LAYER=VK_LAYER_KHRONOS_validation
+
+VK_INSTANCE_LAYERS=$VK_INSTANCE_LAYERS:$LAYER
+#VK_DEVICE_LAYERS=$VK_DEVICE_LAYERS:$LAYER
+
+VK_LAYER_SETTINGS_PATH=$HOME/mesa/src/Vulkan-ValidationLayers/layers/vk_layer_settings.txt
+
+export MESA_VK_ABORT_ON_DEVICE_LOSS=1
+export VK_INSTANCE_LAYERS
+
+exec $@
