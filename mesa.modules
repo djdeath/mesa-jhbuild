@@ -290,7 +290,7 @@
     </dependencies>
   </cmake>
 
-  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DBUILD_TESTS=ON" force-non-srcdir-builds="yes">
+  <cmake id="Vulkan-ValidationLayers" cmakeargs="-DBUILD_TESTS=ON -DUPDATE_DEPS=ON" force-non-srcdir-builds="yes">
     <branch repo="github.com"
             module="KhronosGroup/Vulkan-ValidationLayers"
             revision="main" />
